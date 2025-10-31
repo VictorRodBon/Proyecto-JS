@@ -1,0 +1,11 @@
+- datos ejemplo
+- localStorage / sessionStorage / cookies
+- validación de formularios
+- manejo de textos y Arrays
+- dom:
+    - añadir
+    - eliminar
+    - cambiar
+    - eventos
+- setInterval / setTimeout
+- módulos

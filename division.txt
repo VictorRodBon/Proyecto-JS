@@ -1,0 +1,18 @@
+Alvaro:
+    habitaciones
+
+
+Victor:
+    
+
+
+login
+registro clientes
+habitaciones
+    descripcion habitaciones -> obtener id y pintar datos en la página nueva
+
+listado empleados
+    modificación empleados -> solo jefe
+creación empleados -> solo jefe
+
+reservas (cliente reserva una habitación) -> cuando se reserva -> mostrar mensaje con timeOut y mandar al index
