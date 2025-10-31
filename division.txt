@@ -1,9 +1,11 @@
 Alvaro:
-    habitaciones
-
+    [ ] habitaciones -> listar
 
 Victor:
-    
+    [ ] empleados -> listar
+    [ ] modificar (si da tiempo)
+    [ ] registro
+    [ ] login
 
 
 login
