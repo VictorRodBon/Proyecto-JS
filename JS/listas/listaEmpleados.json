@@ -5,6 +5,7 @@
         "puesto": "director",
         "edad": 45,
         "usuario": "laura123",
+        "password": "passLaura",
         "salario": 3500
     },
     {
@@ -13,6 +14,7 @@
         "puesto": "limpiador",
         "edad": 32,
         "usuario": "carlos321",
+        "password": "passCarlos",
         "salario": 1200
     },
     {
@@ -21,6 +23,7 @@
         "puesto": "cocinero",
         "edad": 28,
         "usuario": "marta456",
+        "password": "passMarta",
         "salario": 1800
     },
     {
@@ -29,6 +32,7 @@
         "puesto": "limpiador",
         "edad": 40,
         "usuario": "jose789",
+        "password": "passJose",
         "salario": 1300
     },
     {
@@ -37,6 +41,7 @@
         "puesto": "cocinero",
         "edad": 35,
         "usuario": "ana654",
+        "password": "passAna",
         "salario": 1900
     },
     {
@@ -45,6 +50,7 @@
         "puesto": "animador",
         "edad": 50,
         "usuario": "luis000",
+        "password": "passLuis",
         "salario": 1500
     }
 ]
