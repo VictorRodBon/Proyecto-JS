@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "nombre": "Laura Gómez",
+        "puesto": "director",
+        "edad": 45,
+        "usuario": "laura123",
+        "salario": 3500
+    },
+    {
+        "id": 2,
+        "nombre": "Carlos Ruiz",
+        "puesto": "limpiador",
+        "edad": 32,
+        "usuario": "carlos321",
+        "salario": 1200
+    },
+    {
+        "id": 3,
+        "nombre": "Marta Sánchez",
+        "puesto": "cocinero",
+        "edad": 28,
+        "usuario": "marta456",
+        "salario": 1800
+    },
+    {
+        "id": 4,
+        "nombre": "José Ortega",
+        "puesto": "limpiador",
+        "edad": 40,
+        "usuario": "jose789",
+        "salario": 1300
+    },
+    {
+        "id": 5,
+        "nombre": "Ana Beltrán",
+        "puesto": "cocinero",
+        "edad": 35,
+        "usuario": "ana654",
+        "salario": 1900
+    },
+    {
+        "id": 6,
+        "nombre": "Luis Fernández",
+        "puesto": "animador",
+        "edad": 50,
+        "usuario": "luis000",
+        "salario": 1500
+    }
+]

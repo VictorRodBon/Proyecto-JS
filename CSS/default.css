@@ -4,3 +4,73 @@
     padding: 0;
     font-family: monospace;
 }
+
+/* Fondo general */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    height: 100vh;
+}
+
+/* Contenedor de tarjetas */
+#lista-empleados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+/* Tarjeta individual */
+.card {
+    background-color: #ffffff;
+    /* Color propio restaurado */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    height: 180px;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Efecto hover */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Título del empleado */
+.card h2 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Detalles del empleado */
+.card p {
+    margin: 4px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Botón */
+.boton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}

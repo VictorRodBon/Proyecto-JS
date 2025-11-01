@@ -1,4 +1,4 @@
-import { Empleados } from './empleados.js';
+import { Empleados } from '../clases/empleados.js';
 
 const listaEmpleados = [
   new Empleados(1, "Laura Gómez", "director", 45, "laura123", 3500),

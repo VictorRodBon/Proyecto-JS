@@ -2,8 +2,8 @@ Alvaro:
     [ ] habitaciones -> listar
 
 Victor:
-    [ ] empleados -> listar
-    [ ] modificar (si da tiempo)
+    [*] empleados -> listar
+        [ ] modificar (si da tiempo)
     [ ] registro
     [ ] login
 

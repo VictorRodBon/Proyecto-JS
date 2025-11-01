@@ -1,18 +1,15 @@
 // empleados.js
 
 class Empleados {
-    constructor(id, name, cargo, age, password, sueldo) {
+    constructor(id, nombre, puesto, edad, usuario, salario) {
         this.id = id;
-        this.name = name;
-        this.cargo = cargo; // [director, limpiador, cocinero] si director -> modifica sueldo
-        this.age = age; // edad
-        this.sueldo=sueldo;
-        this.password = password;
-    }
-
-    cambiarPassword(newPassword) {
-        this.password = newPassword;
+        this.nombre = nombre;
+        this.puesto = puesto;
+        this.edad = edad;
+        this.usuario = usuario;
+        this.salario = salario;
     }
 }
 
 export { Empleados };
+
