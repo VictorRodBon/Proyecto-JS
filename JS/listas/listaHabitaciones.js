@@ -1,4 +1,4 @@
-import { Habitaciones } from './habitaciones.js';
+import { Habitaciones } from '../clases/habitaciones.js';
 
 const listaHabitaciones = [
   new Habitaciones(101, 80, "dobles", false, 1, 2),

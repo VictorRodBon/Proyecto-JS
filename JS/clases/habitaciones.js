@@ -16,3 +16,5 @@ class Habitaciones{
         this.price=newPrice;
     }
 }
+
+export { Habitaciones };

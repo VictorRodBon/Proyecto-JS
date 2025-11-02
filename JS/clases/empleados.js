@@ -1,7 +1,7 @@
 // empleados.js
 
 class Empleados {
-    constructor(id, nombre, puesto, password, usuario, edad, salario) {
+    constructor(id, nombre, puesto, usuario, password, edad, salario) {
         this.id = id;
         this.nombre = nombre;
         this.puesto = puesto;
