@@ -1,4 +1,4 @@
-import {almacenarLista} from "./trabajarConListas.js";
+import {actualizarLista} from "./trabajarConListas.js";
 
 // Mostrar inputs al marcar los checkboxes
 const campos = [
@@ -62,7 +62,7 @@ function mostrarEmpleadoEditar() {
 }
 
 function UsuarioModificado() {
-    location.href = "../../HTML/main.html";
+    location.href = "../../HTML/dashboardEmpleados.html";
 }
 
 function validarValores(event) {
@@ -93,7 +93,7 @@ function validarValores(event) {
         })
         return item;
     })
-    almacenarLista("listaEmpleados", datos);
+    actualizarLista("listaEmpleados", datos);
     UsuarioModificado();
 
 }

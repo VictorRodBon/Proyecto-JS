@@ -1,6 +1,9 @@
 // almacenar lista
 function almacenarLista(nombre,lista){
-    localStorage.setItem(nombre, JSON.stringify(lista));
+    const existente = localStorage.getItem(nombre);
+    if (!existente) {
+        localStorage.setItem(nombre, JSON.stringify(lista));
+    }
 }
 
 // obtener lista
@@ -8,4 +11,15 @@ function obtenerLista(nombre) {
     return JSON.parse(localStorage.getItem(nombre));
 }
 
-export { almacenarLista, obtenerLista };
+// borrar lista
+function borrarLista(){
+    localStorage.clear();
+}
+
+// actualizar lista
+function actualizarLista(nombre, nuevaLista) {
+    localStorage.setItem(nombre, JSON.stringify(nuevaLista));
+}
+
+
+export { almacenarLista, obtenerLista, borrarLista, actualizarLista };

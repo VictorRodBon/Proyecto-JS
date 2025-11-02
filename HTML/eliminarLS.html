@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        localStorage.removeItem("listaEmpleados");
-        localStorage.removeItem("listaClientes");
-        localStorage.removeItem("listaHabitaciones");
+    <script type="module">
+        import { borrarLista } from "../JS/acciones/trabajarConListas.js";
+        borrarLista();
     </script>
+    <script type="module" src="../JS/acciones/iniciarDatos.js"></script>
 </head>
 <body>
     
