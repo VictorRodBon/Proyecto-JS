@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/default.css">
+    <link rel="stylesheet" href="../CSS/estilos-tabla-hab.css">
+    <title>Lista de Habitaciones</title>
+</head>
+
+<body>
+    <h1>Habitaciones</h1>
+
+    <table id="tablaHabitaciones">
+        <thead>
+            <tr>
+                <th>Número de habitación</th>
+                <th>Planta</th>
+                <th>Número de camas</th>
+                <th>Número de huéspedes</th>
+                <th>Precio</th>
+                <th>Estado</th>
+                <th>Enlace</th>
+            </tr>
+        </thead>
+        <tbody id="lista-habitaciones"></tbody>
+    </table>
+
+    <div id="paginacion">
+        <button id="anterior">Anterior</button>
+        <span id="pagina-indicador">Página 1</span>
+        <button id="siguiente">Siguiente</button>
+    </div>
+    
+        
+    <label>Ordernar por: </label>
+
+    <select id="habitacion" name="habitacion">
+        <option value="numero_habitacion">Número de habitación</option>
+        <option value="planta">Planta</option>
+        <option value="camas">Número de camas</option>
+        <option value="numero_huespedes">Número de huéspedes</option>
+        <option value="precio">Precio</option>
+        <option value="estado">Estado</option>
+    </select>
+
+    <input type="radio" name="opcion" id="asc" value="ascendente" checked>▲ Ascendente
+    <input type="radio" name="opcion" id="desc" value="descendente">▼ Descendente<br>
+    
+
+    <script type="module" src="../JS/acciones/listarHabitaciones.js"></script>
+
+    
+
+</body>
+
+</html>

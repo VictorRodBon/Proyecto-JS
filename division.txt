@@ -1,9 +1,12 @@
 Alvaro:
-    [ ] habitaciones -> listar
+    [*] habitaciones -> listar
+    [ ] menu
+    [ ] detalle habitacion
 
 Victor:
     [*] empleados -> listar
-        [ ] modificar (si da tiempo)
+        [*] modificar (si da tiempo)
+        [ ] añadir y eliminar
     [ ] registro emleados
     [ ] login
 

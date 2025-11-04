@@ -4,6 +4,7 @@ import {actualizarLista} from "./trabajarConListas.js";
 const campos = [
     "Nombre", "Puesto", "Usuario", "Password", "Edad", "Salario"
 ];
+// obtener id del empleado
 const idEditar = location.search.split("?")[1].split("=")[1];
 
 function mostrarEmpleadoEditar() {
@@ -62,6 +63,7 @@ function mostrarEmpleadoEditar() {
 }
 
 function UsuarioModificado() {
+    // meter timeout (mirar si puedo meter un pizzacolores (asincrono))
     location.href = "../../HTML/dashboardEmpleados.html";
 }
 
@@ -87,7 +89,6 @@ function validarValores(event) {
                 } else {
                     item[propiedad] = valor;
                 }
-
             }
             
         })
