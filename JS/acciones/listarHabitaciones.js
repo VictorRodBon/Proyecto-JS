@@ -1,6 +1,8 @@
 import { obtenerLista } from "../acciones/trabajarConListas.js";
 let pagina_actual = 1;
 let habitaciones_pagina = 15;
+let campoSeleccinado = "";
+let boton_ordenar = document.getElementsByClassName("boton-ordenar");
 
 function mostrarHabitaciones(campo, orden) {
     let datos = [...obtenerLista("listaHabitaciones")];
@@ -39,6 +41,7 @@ function mostrarHabitaciones(campo, orden) {
                 <td>${habitacion.numero_huespedes}</td>
                 <td>${habitacion.precio}€</td>
                 <td>${habitacion.estado}</td>
+                <td><a href="">Habitacion${habitacion.numero_habitacion}</a></td>
             </tr>
             `;
     });
@@ -54,8 +57,7 @@ function orden() {
     }
 }
 
-function actualizarTabla() {
-    let campo = document.getElementById("habitacion").value;
+function actualizarTabla(campo) {
     document.getElementById("lista-habitaciones").innerHTML = "";
     mostrarHabitaciones(campo, orden());
 
@@ -63,39 +65,51 @@ function actualizarTabla() {
 }
 
 window.onload = () => {
-    let select = document.getElementById("habitacion");
+    /*let select = document.getElementById("habitacion");
     let ascRadio = document.getElementById("asc");
-    let descRadio = document.getElementById("desc");
+    let descRadio = document.getElementById("desc");*/
 
-    actualizarTabla();
-
+    actualizarTabla("numero_habitacion");
+    /*
     select.addEventListener("change", () =>{
         pagina_actual = 1;
-        actualizarTabla();
+        actualizarTabla("numero_habitacion");
     });
     ascRadio.addEventListener("change", () =>{
         pagina_actual = 1;
-        actualizarTabla();
+        actualizarTabla("numero_habitacion");
     });
     descRadio.addEventListener("change", () =>{
         pagina_actual = 1;
-        actualizarTabla();
+        actualizarTabla("numero_habitacion");
     });
+    */
 };
+
+
+
+//for para poder sacar el valor por el que quieres ordenar la tabla
+for (let i = 0; i < boton_ordenar.length; i++) {
+        boton_ordenar[i].addEventListener("click",()=>{
+        campoSeleccinado = boton_ordenar[i].value;
+        actualizarTabla(campoSeleccinado);
+    }); 
+}
 
 document.getElementById("siguiente").addEventListener("click", ()=>{
     let total_habitaciones = obtenerLista("listaHabitaciones").length;
     let max_paginas = Math.ceil(total_habitaciones / habitaciones_pagina);
     if (pagina_actual<max_paginas){
         pagina_actual++;
-        actualizarTabla();
+        actualizarTabla(campoSeleccinado);
+        orden();
     }
 });
 
 document.getElementById("anterior").addEventListener("click", ()=>{
     if (pagina_actual>1){
         pagina_actual--;
-        actualizarTabla();
+        actualizarTabla(campoSeleccinado);
     }
 });
 
