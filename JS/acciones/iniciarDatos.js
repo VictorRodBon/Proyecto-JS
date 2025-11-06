@@ -6,3 +6,4 @@ import { listaHabitaciones } from "../listas/listaHabitaciones.js";
 almacenarLista("ListaClientes", listaClientes);
 almacenarLista("listaEmpleados", listaEmpleados);
 almacenarLista("listaHabitaciones", listaHabitaciones);
+

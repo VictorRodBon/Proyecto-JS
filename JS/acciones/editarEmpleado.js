@@ -64,7 +64,7 @@ function mostrarEmpleadoEditar() {
 
 function UsuarioModificado() {
     // meter timeout (mirar si puedo meter un pizzacolores (asincrono))
-    location.href = "../../HTML/dashboardEmpleados.html";
+    location.href = "../HTML/dashboardEmpleados.html";
 }
 
 function validarValores(event) {

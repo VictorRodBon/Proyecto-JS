@@ -1,4 +1,4 @@
-import { obtenerLista } from "./trabajarConListas.js";
+import { obtenerLista } from "../acciones/trabajarConListas.js";
 let pagina_actual = 1;
 let habitaciones_pagina = 15;
 
