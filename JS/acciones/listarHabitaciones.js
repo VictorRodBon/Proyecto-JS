@@ -1,9 +1,8 @@
 import { obtenerLista } from "../acciones/trabajarConListas.js";
 let pagina_actual = 1;
 let habitaciones_pagina = 15;
-let campoSeleccionado = "";
+let campoSeleccionado = "numero_habitacion";
 let boton_ordenar = document.querySelectorAll(".boton-ordenar");
-console.log(boton_ordenar);
 
 function mostrarHabitaciones(campo, orden) {
     let datos = [...obtenerLista("listaHabitaciones")];
@@ -81,7 +80,8 @@ function actualizarTabla(campo) {
 }
 
 window.onload = () => {
-    actualizarTabla("numero_habitacion");
+    document.getElementById("asc").checked=true;
+    actualizarTabla(campoSeleccionado);
 };
 
 
@@ -100,7 +100,6 @@ document.getElementById("siguiente").addEventListener("click", ()=>{
     if (pagina_actual<max_paginas){
         pagina_actual++;
         actualizarTabla(campoSeleccionado);
-        orden();
     }
 });
 
