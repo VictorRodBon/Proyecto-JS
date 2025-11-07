@@ -12,6 +12,10 @@ body {
     height: 100vh;
 }
 
+header{
+    margin-top: 60px;
+
+}
 /* Contenedor de tarjetas */
 #lista-empleados {
     display: flex;

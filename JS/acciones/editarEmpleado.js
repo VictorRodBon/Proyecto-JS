@@ -62,7 +62,7 @@ function mostrarEmpleadoEditar() {
     });
 }
 
-function UsuarioModificado() {
+function usuarioModificado() {
     // meter timeout (mirar si puedo meter un pizzacolores (asincrono))
     location.href = "../HTML/dashboardEmpleados.html";
 }
@@ -83,7 +83,6 @@ function validarValores(event) {
             let valor=input.value;
             let propiedad=campo.toLocaleLowerCase();
             if(item.id==idEditar){
-                console.log("hemos llegado");
                 if (propiedad === "edad" || propiedad === "salario") {
                     item[propiedad] = parseFloat(valor);
                 } else {
@@ -95,7 +94,7 @@ function validarValores(event) {
         return item;
     })
     actualizarLista("listaEmpleados", datos);
-    UsuarioModificado();
+    usuarioModificado();
 
 }
 

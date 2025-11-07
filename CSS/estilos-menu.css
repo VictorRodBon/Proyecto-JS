@@ -1,4 +1,4 @@
-#menu nav {
+ nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -9,7 +9,7 @@
 }
 
 /* Centrado del contenido */
-#menu ul {
+ nav>ul {
     display: flex;
     justify-content: center;
     list-style: none;
@@ -18,11 +18,11 @@
 }
 
 /* Estilos de los enlaces */
-#menu li {
+ nav>ul>li {
     margin: 0 20px;
 }
 
-#menu a {
+ nav>ul>li>a {
     color: #ecf0f1;
     text-decoration: none;
     font-weight: bold;
@@ -30,6 +30,6 @@
     transition: color 0.3s ease;
 }
 
-#menu a:hover {
+ nav>ul>li>a:hover {
     color: #f39c12;
 }
