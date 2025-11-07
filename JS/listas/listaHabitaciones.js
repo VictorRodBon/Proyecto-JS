@@ -154,7 +154,7 @@ const listaHabitaciones = [
         "estado": "ocupada"
     },
     {
-        "numero_habitacion": "102",
+        "numero_habitacion": "104",
         "planta": 1,
         "camas": 1,
         "numero_huespedes": 1,

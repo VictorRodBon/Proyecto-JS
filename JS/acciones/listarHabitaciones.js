@@ -1,8 +1,9 @@
 import { obtenerLista } from "../acciones/trabajarConListas.js";
 let pagina_actual = 1;
 let habitaciones_pagina = 15;
-let campoSeleccinado = "";
-let boton_ordenar = document.getElementsByClassName("boton-ordenar");
+let campoSeleccionado = "";
+let boton_ordenar = document.querySelectorAll(".boton-ordenar");
+console.log(boton_ordenar);
 
 function mostrarHabitaciones(campo, orden) {
     let datos = [...obtenerLista("listaHabitaciones")];
@@ -65,43 +66,25 @@ function actualizarTabla(campo) {
 }
 
 window.onload = () => {
-    /*let select = document.getElementById("habitacion");
-    let ascRadio = document.getElementById("asc");
-    let descRadio = document.getElementById("desc");*/
-
     actualizarTabla("numero_habitacion");
-    /*
-    select.addEventListener("change", () =>{
-        pagina_actual = 1;
-        actualizarTabla("numero_habitacion");
-    });
-    ascRadio.addEventListener("change", () =>{
-        pagina_actual = 1;
-        actualizarTabla("numero_habitacion");
-    });
-    descRadio.addEventListener("change", () =>{
-        pagina_actual = 1;
-        actualizarTabla("numero_habitacion");
-    });
-    */
 };
 
 
 
 //for para poder sacar el valor por el que quieres ordenar la tabla
-for (let i = 0; i < boton_ordenar.length; i++) {
-        boton_ordenar[i].addEventListener("click",()=>{
-        campoSeleccinado = boton_ordenar[i].value;
-        actualizarTabla(campoSeleccinado);
-    }); 
-}
+boton_ordenar.forEach((boton)=>{
+    boton.addEventListener("click",()=>{
+        campoSeleccionado = boton.value;
+        actualizarTabla(campoSeleccionado);
+    })
+})
 
 document.getElementById("siguiente").addEventListener("click", ()=>{
     let total_habitaciones = obtenerLista("listaHabitaciones").length;
     let max_paginas = Math.ceil(total_habitaciones / habitaciones_pagina);
     if (pagina_actual<max_paginas){
         pagina_actual++;
-        actualizarTabla(campoSeleccinado);
+        actualizarTabla(campoSeleccionado);
         orden();
     }
 });
@@ -109,7 +92,7 @@ document.getElementById("siguiente").addEventListener("click", ()=>{
 document.getElementById("anterior").addEventListener("click", ()=>{
     if (pagina_actual>1){
         pagina_actual--;
-        actualizarTabla(campoSeleccinado);
+        actualizarTabla(campoSeleccionado);
     }
 });
 
