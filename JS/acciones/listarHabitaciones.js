@@ -10,19 +10,34 @@ function mostrarHabitaciones(campo, orden) {
 
     if (orden == "asc") {
         datos.sort((a, b) => {
+            let resultado;
             if (typeof a[campo] === "string") {
-                return a[campo].localeCompare(b[campo]);
+                resultado = a[campo].localeCompare(b[campo]);
             } else {
-                return a[campo] - b[campo];
+                resultado = a[campo] - b[campo];
             }
+
+            if (resultado === 0) {
+                resultado = a["numero_habitacion"] - b["numero_habitacion"];
+            }
+
+            return resultado;
         });
+
     } else {
         datos.sort((a, b) => {
-            if (typeof b[campo] === "string") {
-                return b[campo].localeCompare(a[campo]);
+            let resultado;
+            if (typeof a[campo] === "string") {
+                resultado = b[campo].localeCompare(a[campo]);
             } else {
-                return b[campo] - a[campo];
+                resultado = b[campo] - a[campo];
             }
+
+            if (resultado === 0) {
+                resultado = a["numero_habitacion"] - b["numero_habitacion"];
+            }
+
+            return resultado;
         });
     }
 
@@ -97,4 +112,3 @@ document.getElementById("anterior").addEventListener("click", ()=>{
 });
 
 export { mostrarHabitaciones };
-
