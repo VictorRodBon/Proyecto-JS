@@ -16,6 +16,28 @@
         <h1>Habitaciones</h1>
     </header>
 
+    <div class="buscador">
+        <div>
+            <input type="radio" name="opcion" id="asc" value="ascendente" checked>▲ Ascendente
+            <input type="radio" name="opcion" id="desc" value="descendente">▼ Descendente
+        </div>
+        
+        <div>
+            <label>Buscar por: </label>
+            <select id="habitacion" name="habitacion">
+                <option value="numero_habitacion">Número de habitación</option>
+                <option value="planta">Planta</option>
+                <option value="camas">Número de camas</option>
+                <option value="numero_huespedes">Número de huéspedes</option>
+                <option value="precio">Precio</option>
+                <option value="estado">Estado</option>
+            </select>
+            <input type="text">
+        </div>
+    </div>
+
+    
+
     <table id="tablaHabitaciones">
         <thead>
             <tr>
@@ -36,22 +58,6 @@
         <span id="pagina-indicador">Página 1</span>
         <button id="siguiente">Siguiente</button>
     </div>
-    
-        
-    <label>Ordernar por: </label>
-
-    <select id="habitacion" name="habitacion">
-        <option value="numero_habitacion">Número de habitación</option>
-        <option value="planta">Planta</option>
-        <option value="camas">Número de camas</option>
-        <option value="numero_huespedes">Número de huéspedes</option>
-        <option value="precio">Precio</option>
-        <option value="estado">Estado</option>
-    </select>
-
-    <input type="radio" name="opcion" id="asc" value="ascendente" checked>▲ Ascendente
-    <input type="radio" name="opcion" id="desc" value="descendente">▼ Descendente<br>
-    
 
     <script type="module" src="../JS/acciones/listarHabitaciones.js"></script>
 
