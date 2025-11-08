@@ -56,7 +56,7 @@ function mostrarHabitaciones(campo, orden) {
                 <td>${habitacion.numero_huespedes}</td>
                 <td>${habitacion.precio}€</td>
                 <td>${habitacion.estado}</td>
-                <td><a href="">Habitacion${habitacion.numero_habitacion}</a></td>
+                <td><button class="enlace" onclick="window.location.href='descripcionHabitacion.html?id=${habitacion.numero_habitacion}'">Habitacion${habitacion.numero_habitacion}</td>
             </tr>
             `;
     });
