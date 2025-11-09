@@ -6,20 +6,26 @@
     <title>Registro</title>
     <link rel="stylesheet" href="../CSS/forms.css">
     <link rel="stylesheet" href="../CSS/default.css">
+    <script type="module" src="../JS/acciones/registro.js"></script>
 </head>
 <body>
     <form action="">
-        <label for="name">
-            nombre:
-        </label>
-        <input type="text" name="name"><br>
+        <label for="name">nombre:</label>
+        <input type="text" name="name" id="nombre"><br>
 
-        <label for="password">
-            contraseña:
-        </label>
-        <input type="password" name="password"><br>
+        <label for="password">contraseña:</label>
+        <input type="password" name="password" id="password"><br>
+
+        <label for="email">correo: </label>
+        <input type="email" name="email" id="correo">
+
+        <label for="city">ciudad: </label>
+        <input type="text" name="city" id="ciudad">
+
+        <p style="display: none;" class="error" >⚠️ Por favor, completa todos los campos correctamente.</p>
+
         <p>Si ya tienes una cuenta <a href="./login.html">inicia sesión</a></p>
-        <input type="submit" value="enviar" name="submit">
+        <button type="button">enviar</button>
         <input type="reset" value="borrar" name="reset">
     </form>
 </body>

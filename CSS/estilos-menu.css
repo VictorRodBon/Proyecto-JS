@@ -1,4 +1,4 @@
- nav {
+nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,8 +8,8 @@
     z-index: 1000;
 }
 
-/* Centrado del contenido */
- nav>ul {
+ /* Centrado del contenido */
+nav>ul {
     display: flex;
     justify-content: center;
     list-style: none;
@@ -17,12 +17,12 @@
     padding: 0;
 }
 
-/* Estilos de los enlaces */
- nav>ul>li {
+ /* Estilos de los enlaces */
+nav>ul>li {
     margin: 0 20px;
 }
 
- nav>ul>li>a {
+nav>ul>li>a {
     color: #ecf0f1;
     text-decoration: none;
     font-weight: bold;
@@ -30,6 +30,7 @@
     transition: color 0.3s ease;
 }
 
- nav>ul>li>a:hover {
+nav>ul>li>a:hover {
     color: #f39c12;
 }
+

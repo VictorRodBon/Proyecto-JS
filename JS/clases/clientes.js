@@ -1,11 +1,11 @@
 // clientes.js
 
 class Clientes {
-    constructor(id, name, city, date, password) {
+    constructor(id, name, city, mail, password) {
         this.id = id;
         this.name = name;
         this.city = city;
-        this.date = date;
+        this.mail = mail;
         this.password = password;
     }
 

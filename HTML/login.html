@@ -6,22 +6,23 @@
     <title>Inicio de sesión</title>
     <link rel="stylesheet" href="../CSS/forms.css">
     <link rel="stylesheet" href="../CSS/default.css">
-
     <script type="module" src="../JS/acciones/iniciarDatos.js"></script>
+    <script type="module" src="../JS/acciones/login.js"></script>
 </head>
 <body>
     <form action="">
         <label for="name">
-            nombre:
+            usuario:
         </label>
-        <input type="text" name="name"><br>
+        <input type="text" name="name" id="usuario"><br>
 
         <label for="password">
             contraseña:
         </label>
-        <input type="password" name="password"><br>
+        <input type="password" name="password" id="contrasena"><br>
+        <p style="display:none">Usuario y/o contraseña no válidos</p>
         <p>Si no tienes una cuenta <a href="./registro.html">registrate</a></p>
-        <input type="submit" value="enviar" name="submit">
+        <button type="button">enviar</button>
         <input type="reset" value="borrar" name="reset">
     </form>
 </body>

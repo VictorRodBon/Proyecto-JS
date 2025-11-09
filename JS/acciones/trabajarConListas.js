@@ -17,8 +17,8 @@ function borrarLista(){
 }
 
 // actualizar lista
-function actualizarLista(nombre, nuevaLista) {
-    localStorage.setItem(nombre, JSON.stringify(nuevaLista));
+function actualizarLista(nombre, lista) {
+    localStorage.setItem(nombre, JSON.stringify(lista));
 }
 
 

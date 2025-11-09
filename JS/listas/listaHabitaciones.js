@@ -2,7 +2,7 @@ import { Habitaciones } from '../clases/habitaciones.js';
 
 const listaHabitaciones = [
     {
-        "numero_habitacion": "301",
+        "numero_habitacion": "303",
         "planta": 3,
         "camas": 2,
         "numero_huespedes": 2,
@@ -34,7 +34,7 @@ const listaHabitaciones = [
         "estado": "libre"
     },
     {
-        "numero_habitacion": "502",
+        "numero_habitacion": "505",
         "planta": 5,
         "camas": 1,
         "numero_huespedes": 1,
@@ -170,7 +170,7 @@ const listaHabitaciones = [
         "estado": "reservada"
     },
     {
-        "numero_habitacion": "501",
+        "numero_habitacion": "504",
         "planta": 5,
         "camas": 2,
         "numero_huespedes": 2,
