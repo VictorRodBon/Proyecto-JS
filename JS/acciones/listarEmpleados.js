@@ -27,15 +27,16 @@ function mostrarEmpleados() {
         `;
     })
     document.getElementById("lista-empleados").insertAdjacentHTML("beforeend",contenido);
-    if(document.getElementsByClassName("boton-anadir")){
-        let anadir=document.createElement("button");
-        anadir.textContent="Añadir empleado";
+    if (!document.querySelector(".boton-anadir")) {
+        let anadir = document.createElement("button");
+        anadir.textContent = "Añadir empleado";
         anadir.classList.add("boton", "boton-anadir");
-        anadir.addEventListener("click",() => {
+        anadir.addEventListener("click", () => {
             window.location.href = `crearEmpleado.html`;
         });
         document.getElementsByTagName("main")[0].appendChild(anadir);
     }
+
 
 
 }
