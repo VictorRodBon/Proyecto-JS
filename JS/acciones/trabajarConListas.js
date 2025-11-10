@@ -21,5 +21,10 @@ function actualizarLista(nombre, lista) {
     localStorage.setItem(nombre, JSON.stringify(lista));
 }
 
+// obtener maximo
+function obtenerMaximo(lista, campo) {
+    return Math.max(...lista.map(e => e[campo]));
+}
 
-export { almacenarLista, obtenerLista, borrarLista, actualizarLista };
+
+export { almacenarLista, obtenerLista, borrarLista, actualizarLista, obtenerMaximo };

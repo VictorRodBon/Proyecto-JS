@@ -32,14 +32,3 @@ function login(){
 
 export { login };
 
-/**
-
-const usuarios = [
-    { nombre: 'Víctor', edad: 25 },
-    { nombre: 'Lucía', edad: 30 }
-];
-
-const existe = usuarios.some(u => u.nombre === 'Víctor'); // true
-
-
- */

@@ -158,6 +158,13 @@ label {
     color: white;
     font-size: 1em;
     font-weight: bold;
+    padding: 5px;
+    border-radius: 2px;
+    transition: 0.5s;
+}
+
+.boton-ordenar:hover{
+    background-color: #005ab9;
 }
 
 .enlace{

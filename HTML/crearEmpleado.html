@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear empleado</title>
+    <link rel="stylesheet" href="../CSS/forms.css">
+    <link rel="stylesheet" href="../CSS/default.css">
+    <script type="module" src="../JS/acciones/crearEmpleado.js"></script>
+</head>
+<body>
+    <form action="">
+        <label for="name">nombre:</label>
+        <input type="text" name="name" id="nombre"><br>
+
+        <label for="usuario">usuario:</label>
+        <input type="text" name="usuario" id="usuario"><br>
+
+        <label for="password">contraseña:</label>
+        <input type="password" name="password" id="password"><br>
+
+        <label for="edad">edad: </label>
+        <input type="number" name="edad" id="edad">
+
+        <label for="salario">salario: </label>
+        <input type="number" name="salario" id="salario">
+
+        <label for="puesto">puesto: </label>
+        <select name="puesto" id="puesto">
+            <option value="director">director</option>
+            <option value="limpiador">limpiador</option>
+            <option value="receptionista">receptionista</option>
+            <option value="contable">contable</option>
+            <option value="rh">recursos humanos</option>
+            <option value="tecnico">tecnico</option>
+        </select>
+
+        <p id="error" class="oculto">⚠️ Por favor, completa todos los campos correctamente.</p>
+
+
+        <p>Si ya tienes una cuenta <a href="./login.html">inicia sesión</a></p>
+        <button type="button">enviar</button>
+        <input type="reset" value="borrar" name="reset">
+    </form>
+</body>
+</html>

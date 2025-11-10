@@ -26,9 +26,15 @@ header{
     justify-content: center;
     align-items: flex-start;
     overflow-y: auto;
-    height: 100vh;
+    height: auto;
 }
 
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /* Tarjeta individual */
 .card {
     background-color: #ffffff;
@@ -36,7 +42,7 @@ header{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 220px;
-    height: 180px;
+    height: 220px;
     padding: 15px;
     box-sizing: border-box;
     transition: transform 0.2s ease;
@@ -65,9 +71,11 @@ header{
 }
 
 /* Botón */
+
 .boton {
     background-color: #007bff;
     color: white;
+    margin: 5px 0px;
     border: none;
     border-radius: 6px;
     padding: 8px;
@@ -82,4 +90,16 @@ header{
 /* Titulos */
 h1{
     text-align: center;
+}
+
+.boton-anadir{
+    width:50%
+}
+
+
+.oculto{
+    display: none;
+}
+.visible {
+    display: block;
 }

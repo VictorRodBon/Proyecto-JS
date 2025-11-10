@@ -1,13 +1,11 @@
 import { Clientes } from "../clases/clientes.js";
 import { listaClientes } from "../listas/listaClientes.js";
-import { actualizarLista } from "./trabajarConListas.js";
+import { actualizarLista,obtenerMaximo } from "./trabajarConListas.js";
 
 document.querySelector("button[type='button']").addEventListener("click", registro);
 
 
-function obtenerMaximo(lista, campo) {
-    return Math.max(...lista.map(e => e[campo]));
-}
+
 
 
 function registro(){
