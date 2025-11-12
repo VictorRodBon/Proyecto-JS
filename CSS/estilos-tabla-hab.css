@@ -152,28 +152,43 @@ label {
     font-weight: bold;
 }
 
-.boton-ordenar{
-    border: 0px none;
+/* Botones de columna y enlaces estilo botón */
+.boton-ordenar {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    font-size: 0.95em;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.enlace {
     background-color: #007bff;
     color: white;
-    font-size: 1em;
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 2px;
-    transition: 0.5s;
+    border: none;
+    font-size: 0.95em;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.boton-ordenar:hover{
-    background-color: #005ab9;
+/* Efecto al pasar el ratón */
+.boton-ordenar:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05);
 }
 
-.enlace{
-    border: 0px none;
-    background-color: transparent;
-    padding: 2px;
-    text-decoration: underline;
-}
+.enlace:hover {
 
-.enlace:hover{
-    scale: 1.05;
+    transform: scale(1.05);
 }
