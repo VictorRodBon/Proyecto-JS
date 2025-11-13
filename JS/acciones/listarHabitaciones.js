@@ -56,7 +56,7 @@ function mostrarHabitaciones(campo, orden) {
                 <td>${habitacion.numero_huespedes}</td>
                 <td>${habitacion.precio}€</td>
                 <td>${habitacion.estado}</td>
-                <td><button class="enlace" onclick="window.location.href='descripcionHabitacion.html?id=${habitacion.numero_habitacion}'">Habitacion${habitacion.numero_habitacion}</td>
+                <td><button class="enlace" onclick="window.location.href='descripcionHabitacion.html?id=${habitacion.numero_habitacion}'">Habitacion${habitacion.numero_habitacion}</button></td>
             </tr>
             `;
     });
@@ -92,6 +92,33 @@ boton_ordenar.forEach((boton)=>{
         campoSeleccionado = boton.value;
         actualizarTabla(campoSeleccionado);
     })
+})
+
+document.getElementById("buscar").addEventListener("click", ()=>{
+    let ordena_por = document.getElementById("habitacion").value;
+    let valor = document.getElementById("valor").value;
+    let datos = [... obtenerLista("listaHabitaciones")];
+    let contenido = ""
+    document.getElementById("lista-habitaciones").innerHTML = "";
+
+        datos.forEach(habitacion => {
+            if (habitacion[ordena_por].toString() == valor){
+                contenido += `
+                <tr>
+                    <td>${habitacion.numero_habitacion}</td>
+                    <td>${habitacion.planta}</td>
+                    <td>${habitacion.camas}</td>
+                    <td>${habitacion.numero_huespedes}</td>
+                    <td>${habitacion.precio}€</td>
+                    <td>${habitacion.estado}</td>
+                    <td><button class="enlace" onclick="window.location.href='descripcionHabitacion.html?id=${habitacion.numero_habitacion}'">Habitacion${habitacion.numero_habitacion}</button></td>
+                </tr>
+                `;
+            }
+        });
+
+    document.getElementById("lista-habitaciones").insertAdjacentHTML("beforeend", contenido);
+
 })
 
 document.getElementById("siguiente").addEventListener("click", ()=>{
