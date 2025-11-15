@@ -42,7 +42,7 @@ function pintarHabitacion(){
 
 
 function cambiarEstado(){
-    habitacion.estado = "ocupado";
+    habitacion.estado = "ocupada";
     document.getElementById("texto").innerHTML = "";
     document.getElementById("imagen").innerHTML = "";
     pintarHabitacion();
