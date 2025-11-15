@@ -27,8 +27,10 @@ body {
 .text h1 {
     font-size: 3rem;
     color: var(--color-secondary);
-    margin-top: -20px; /* sube el título */
-    margin-bottom: 30px; /* reduce espacio inferior */
+    margin-top: -20px;
+    /* sube el título */
+    margin-bottom: 30px;
+    /* reduce espacio inferior */
 }
 
 
@@ -96,4 +98,23 @@ body {
     .price-state {
         font-size: 1.6rem;
     }
+}
+
+#botonEstado {
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: block;          /* lo convierte en bloque */
+    margin: 30px auto 0;  
+}
+
+#botonEstado:hover {
+    background: var(--color-secondary);
+    color: #fff;
+    transform: translateY(-2px);
 }
