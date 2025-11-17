@@ -1,4 +1,5 @@
 import { obtenerLista } from "../acciones/trabajarConListas.js";
+import { actualizarLista } from "../acciones/trabajarConListas.js";
 let datos = [...obtenerLista("listaHabitaciones")];
 const numHabitacion = location.search.split("?")[1].split("=")[1];
 let contenido = "";
@@ -43,6 +44,10 @@ function pintarHabitacion(){
 
 function cambiarEstado(){
     habitacion.estado = "ocupada";
+
+    // Actualizar localStorage
+    actualizarLista("listaHabitaciones", datos);
+
     document.getElementById("texto").innerHTML = "";
     document.getElementById("imagen").innerHTML = "";
     pintarHabitacion();
