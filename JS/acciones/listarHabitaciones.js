@@ -3,6 +3,7 @@ let pagina_actual = 1;
 let habitaciones_pagina = 15;
 let campoSeleccionado = "numero_habitacion";
 let boton_ordenar = document.querySelectorAll(".boton-ordenar");
+let boton_quitar_filtro = false;
 
 function mostrarHabitaciones(campo, orden) {
     let datos = [...obtenerLista("listaHabitaciones")];
@@ -73,6 +74,11 @@ function orden() {
 }
 
 function actualizarTabla(campo) {
+    if (boton_quitar_filtro == true){
+        document.getElementById("quitar-filtro").remove();
+        boton_quitar_filtro = false;
+    }
+    
     document.getElementById("lista-habitaciones").innerHTML = "";
     mostrarHabitaciones(campo, orden());
 
@@ -118,7 +124,17 @@ document.getElementById("buscar").addEventListener("click", ()=>{
         });
 
     document.getElementById("lista-habitaciones").insertAdjacentHTML("beforeend", contenido);
+    //compruebas que el boton para eleminar el filtro no esta puesto en el HTML
+    if (boton_quitar_filtro == false){
 
+        document.getElementById("asc-desc").insertAdjacentHTML("afterend", '<button id="quitar-filtro">Quitar filtro de busqueda</button>');
+        boton_quitar_filtro = true;
+
+        document.getElementById("quitar-filtro").addEventListener("click", ()=>{
+            actualizarTabla(campoSeleccionado);
+        });
+    }
+    
 })
 
 document.getElementById("siguiente").addEventListener("click", ()=>{
@@ -136,5 +152,6 @@ document.getElementById("anterior").addEventListener("click", ()=>{
         actualizarTabla(campoSeleccionado);
     }
 });
+
 
 export { mostrarHabitaciones };
