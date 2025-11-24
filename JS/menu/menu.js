@@ -25,7 +25,7 @@ class Menu extends HTMLElement{
         }
         return `
         <style>
-             nav {
+            nav {
                 position: fixed;
                 top: 0;
                 left: 0;

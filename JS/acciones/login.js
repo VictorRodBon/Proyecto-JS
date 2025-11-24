@@ -1,5 +1,5 @@
 import { obtenerLista } from "./trabajarConListas.js";
-import { generarCookie } from "../cookies/cookies.js";
+import { generarCookie,getCookie } from "../cookies/cookies.js";
 
 /**
  * Obtenemos las listas con las que trabajaremos

@@ -1,13 +1,13 @@
 import { actualizarLista,obtenerLista } from "./trabajarConListas.js";
+import { getCookie } from "../cookies/cookies.js";
 
 let datos=[...obtenerLista("listaEmpleados")];
 
 
 
-
-
 function mostrarEmpleados() {
     let contenido = "";
+    let cargo = getCookie('cargo');
     datos.forEach(empleado =>{
         contenido += `
             <div class="card">
@@ -15,6 +15,9 @@ function mostrarEmpleados() {
                 <p>ID: ${empleado.id}</p>
                 <p>Cargo: ${empleado.puesto}</p>
                 <p>Edad: ${empleado.edad}</p>
+            `;
+        if(cargo.toLowerCase==='director'){
+            contenido += `
                 <p>Salario: ${empleado.salario} €</p>
                 <button class="boton" onclick="window.location.href='editarEmpleado.html?id=${empleado.id}'">
                     Editar empleado
@@ -22,19 +25,23 @@ function mostrarEmpleados() {
                 <button class="boton" onclick="borrarEmpleado(${empleado.id})">
                     Borrar empleado
                 </button>
-
+            `;
+        }
+        contenido += `
             </div>
         `;
     })
     document.getElementById("lista-empleados").insertAdjacentHTML("beforeend",contenido);
-    if (!document.querySelector(".boton-anadir")) {
-        let anadir = document.createElement("button");
-        anadir.textContent = "Añadir empleado";
-        anadir.classList.add("boton", "boton-anadir");
-        anadir.addEventListener("click", () => {
-            window.location.href = `crearEmpleado.html`;
-        });
-        document.getElementsByTagName("main")[0].appendChild(anadir);
+    if (cargo.toLowerCase === 'director'){
+        if (!document.querySelector(".boton-anadir")) {
+            let anadir = document.createElement("button");
+            anadir.textContent = "Añadir empleado";
+            anadir.classList.add("boton", "boton-anadir");
+            anadir.addEventListener("click", () => {
+                window.location.href = `crearEmpleado.html`;
+            });
+            document.getElementsByTagName("main")[0].appendChild(anadir);
+        }
     }
 
 
