@@ -1,0 +1,83 @@
+#conciertos{
+    margin-top: 50px;
+}
+.concierto{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+audio {
+  width: 300px;       /* ancho del reproductor */
+  margin: 20px;       /* separación */
+  border-radius: 8px; /* esquinas redondeadas */
+  background-color: #f0f0f0; /* color de fondo (solo visible en algunos navegadores) */
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #2c3e50; /* fondo del panel */
+  color: white;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: #007bff ; /* botón de play */
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: #fff;
+  text-shadow: none;
+}
+
+
+
+h2{
+    text-align: center;
+    margin-top: 20px;
+}
+/* videos */
+#peliculas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+h3{
+    text-align: center;
+}
+#peliculas iframe {
+    aspect-ratio: 16/9;
+    min-width: 350px;
+    border-radius: 5px;
+    border: #222 solid 2px;
+    box-shadow: #22222279 5px 5px 5px 5px;
+}
+
+/* imagenes */
+#shows{
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#shows div{
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: #007bff 2px solid;
+}
+picture{
+  width: 100%;
+}
+img{
+  width: 100%;
+  padding: 10px;
+}
+
+
+main{
+  margin-bottom: 20px;
+}

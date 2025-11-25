@@ -13,6 +13,15 @@ let habitacion = datos.find(i => i.numero_habitacion == numHabitacion);
 window.onload = ()=> {
     pintarHabitacion();
     document.getElementById("botonEstado").addEventListener("click",cambiarEstado);
+
+    let login=getCookie('cargo');
+    if (login != null) {
+        login = "logout";
+    } else {
+        login = "login";
+    }
+    document.getElementsByTagName('header')[0].insertAdjacentHTML("afterbegin", "<mi-menu id='menu' login="+login+"></mi-menu>");
+
 }
 
 function pintarHabitacion(){
@@ -45,7 +54,9 @@ function pintarHabitacion(){
 
 
 function cambiarEstado(){
-    if(!getCookie===null){
+
+    let login=getCookie('cargo');
+    if (login != null) {
         habitacion.estado = "ocupada";
     
         // Actualizar localStorage
@@ -54,7 +65,7 @@ function cambiarEstado(){
         document.getElementById("texto").innerHTML = "";
         document.getElementById("imagen").innerHTML = "";
         pintarHabitacion();
-    }else{
+    } else {
         alert('tienes que loguearte para reservar una habitación');
     }
 }

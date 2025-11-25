@@ -4,25 +4,11 @@ class Menu extends HTMLElement{
         // contenido no accesible
         let shadowRoot=this.attachShadow({mode: 'open'});
         // creamos parametros
-        this.colorFondo=this.getAttribute("fondo");
+        this.login=this.getAttribute("login");
         // hacemos que no sea accesible
         shadowRoot.innerHTML=this.template;
     }
     get template(){
-        let color="white";
-        switch(this.colorFondo){
-            case "verde":
-                color="green";
-                break;
-            case "azul":
-                color="blue";
-                break;
-            case "amarillo":
-                color="yellow";
-                break;
-            default:
-                break;
-        }
         return `
         <style>
             nav {
@@ -65,6 +51,7 @@ class Menu extends HTMLElement{
                 <ul>
                     <li><a href="../HTML/dashboardEmpleados.html">Empleados</a></li>
                     <li><a href="../HTML/dashboardHabitaciones.html">Habitaciones</a></li>
+                    <li><a href="../HTML/${this.login}.html">${this.login}</a></li>
                 </ul>
             </nav>
         `;

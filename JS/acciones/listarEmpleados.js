@@ -3,6 +3,15 @@ import { getCookie } from "../cookies/cookies.js";
 
 let datos=[...obtenerLista("listaEmpleados")];
 
+onload=()=>{
+    let login=getCookie('cargo');
+    if (login != null) {
+        login = "logout";
+    } else {
+        login = "login";
+    }
+    document.getElementsByTagName('header')[0].insertAdjacentHTML("afterbegin", "<mi-menu id='menu' login="+login+"></mi-menu>");
+}
 
 
 function mostrarEmpleados() {
@@ -16,7 +25,7 @@ function mostrarEmpleados() {
                 <p>Cargo: ${empleado.puesto}</p>
                 <p>Edad: ${empleado.edad}</p>
             `;
-        if(cargo.toLowerCase==='director'){
+        if(cargo.toLowerCase()==='director'){
             contenido += `
                 <p>Salario: ${empleado.salario} €</p>
                 <button class="boton" onclick="window.location.href='editarEmpleado.html?id=${empleado.id}'">
@@ -32,7 +41,7 @@ function mostrarEmpleados() {
         `;
     })
     document.getElementById("lista-empleados").insertAdjacentHTML("beforeend",contenido);
-    if (cargo.toLowerCase === 'director'){
+    if (cargo.toLowerCase() === 'director'){
         if (!document.querySelector(".boton-anadir")) {
             let anadir = document.createElement("button");
             anadir.textContent = "Añadir empleado";

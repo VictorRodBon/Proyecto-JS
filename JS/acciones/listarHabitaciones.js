@@ -1,9 +1,13 @@
 import { obtenerLista } from "../acciones/trabajarConListas.js";
+import { getCookie } from "../cookies/cookies.js";
+
 let pagina_actual = 1;
 let habitaciones_pagina = 15;
 let campoSeleccionado = "numero_habitacion";
 let boton_ordenar = document.querySelectorAll(".boton-ordenar");
 let boton_quitar_filtro = false;
+
+
 
 function mostrarHabitaciones(campo, orden) {
     let datos = [...obtenerLista("listaHabitaciones")];
@@ -88,6 +92,15 @@ function actualizarTabla(campo) {
 window.onload = () => {
     document.getElementById("asc").checked=true;
     actualizarTabla(campoSeleccionado);
+
+
+    let login=getCookie('cargo');
+    if (login != null) {
+        login = "logout";
+    } else {
+        login = "login";
+    }
+    document.getElementsByTagName('header')[0].insertAdjacentHTML("afterbegin", "<mi-menu id='menu' login="+login+"></mi-menu>");
 };
 
 

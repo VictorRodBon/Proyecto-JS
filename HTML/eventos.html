@@ -7,31 +7,36 @@
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/default.css" />
     <link rel="stylesheet" href="../CSS/eventos.css" />
+
+    <script type="module" src="../JS/menu/modulo.js"></script>
+
 </head>
 
 <body>
+    
     <main>
+        <mi-menu id="menu"></mi-menu>
         <div id="conciertos">
             <h2>conciertos</h2>
+            <h3>grupo1</h3>
             <div class="concierto">
-                <h3>grupo1</h3>
                 <audio controls>
                     <source src="https://ia601201.us.archive.org/17/items/chubbymoshhomonimo/Chubbyslovaquia.mp3"
                         type="audio/mpeg">
                 </audio>
-                audio de chubbymosh
+                <b>audio de chubbymosh</b>
             </div>
+            <h3>grupo2</h3>
             <div class="concierto">
-                <h3>grupo2</h3>
                 <audio controls>
                     <source src="../audio/groovy-vibe-427121.mp3" type="audio/mpeg">
                 </audio>
-                sonido de Bransboynd
+                <b>sonido de Bransboynd</b>
             </div>
         </div>
         <hr/>
+        <h2>peliculas</h2>
         <div id="peliculas">
-            <h2>peliculas</h2>
             <div>
                 <h3>Cocaine Shark:</h3>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/9rW6aVE00to?si=vz2InnSTiIwLR2C5"
@@ -44,38 +49,42 @@
             </div>
             <div>
                 <h3>Velocipastor:</h3>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/JppwKpfOgyo?si=fcx5RwI28YISiN2u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/JppwKpfOgyo?si=fcx5RwI28YISiN2u" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
                 <div class="informacion">
                 </div>
             </div>
         </div>
         <hr/>
+        <h2>shows</h2>
         <div id="shows">
-            <h2>shows</h2>
             <div id="show">
-                <h3>Show1</h3>
                 <picture>
                     <source srcset="https://img.freepik.com/vector-premium/mago-mago-cartel-circo-magia-ilusionista_8071-34387.jpg" media="(min-width: 600px)" />
-                <img src="" alt="show1">
+                    <img src="" alt="show1">
                 </picture>
+                <h3>Show1</h3>
             </div>
             <div id="show">
-                <h3>Show2</h3>
                 <picture>
                     <source srcset="https://www.alcaladeguadaira.es/photo/eventos/1699/1/espectaculo-de-humor-show-patetico.jpg?w=600" media="(min-width: 600px)" />
                     <img src="" alt="show2" />
                 </picture>
+                <h3>Show2</h3>
 
             </div>
             <div id="show">
-                <h3>Show3</h3>
                 <picture>
                     <source srcset="https://www.shutterstock.com/image-vector/retro-circus-poster-invitation-magic-600nw-2467887343.jpg" media="(min-width: 600px)" />
                     <img src="" alt="show2" />
                 </picture>
+                <h3>Show3</h3>
             </div>
         </div>
     </main>
+    <br><br><br><br>
 </body>
 </html>

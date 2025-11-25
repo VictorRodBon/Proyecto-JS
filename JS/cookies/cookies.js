@@ -15,4 +15,9 @@ function getCookie(nombre) {
     return null;
 }
 
-export { generarCookie, getCookie };
+function borrarCookie(){
+    // Borrar cookie llamada "usuario"
+    document.cookie = "cargo=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
+export { generarCookie, getCookie, borrarCookie };
