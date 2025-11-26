@@ -67,23 +67,28 @@ function usuarioModificado() {
     // meter timeout (mirar si puedo meter un pizzacolores (asincrono))
     location.href = "../HTML/dashboardEmpleados.html";
 }
-//
+// creamos una función para validar si los valores introducidos son válidos
 function validarValores(event) {
     event.preventDefault();
-
+    // obtenemos los id de los inputs que tengan el id que queremos y el sestilo sea block
     const camposVisibles = campos.filter(campo => {
         const input = document.getElementById(`input${campo}`);
         return input && window.getComputedStyle(input).display === "block";
     })
 
+    // obtenemos los datos desde el localStorage
     let datos = [...JSON.parse(localStorage.getItem("listaEmpleados"))];
 
+    // reescribimos la datos modificando los datos que queremos y que pasamos por el formulario 
     datos=datos.map(item=>{
+        // realizamos las siguientes acciones para cada campo visible
         camposVisibles.forEach(campo=>{
             let input = document.getElementById(`input${campo}`)
             let valor=input.value;
             let propiedad=campo.toLocaleLowerCase();
+            // comprobamos si el id del empleado es el mismo que el que queremos editar
             if(item.id==idEditar){
+                // si el campo es edad o salario lo pasamos a entero
                 if (propiedad === "edad" || propiedad === "salario") {
                     item[propiedad] = parseFloat(valor);
                 } else {
@@ -93,6 +98,7 @@ function validarValores(event) {
         })
         return item;
     })
+    // llamamos a la actualizarLista
     actualizarLista("listaEmpleados", datos);
     usuarioModificado();
 }
