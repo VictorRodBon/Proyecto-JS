@@ -9,10 +9,11 @@ let boton_quitar_filtro = false;
 let boton_buscar = false;
 
 
-
+//crea la tabla de las habitaciones
 function mostrarHabitaciones(campo, orden) {
     let datos = [...obtenerLista("listaHabitaciones")];
 
+    //ordena los datos de forma ascendente
     if (orden == "asc") {
         datos.sort((a, b) => {
             let resultado;
@@ -21,7 +22,7 @@ function mostrarHabitaciones(campo, orden) {
             } else {
                 resultado = a[campo] - b[campo];
             }
-
+            //ordena tambien por numero de habitacion
             if (resultado === 0) {
                 resultado = a["numero_habitacion"] - b["numero_habitacion"];
             }
@@ -29,6 +30,7 @@ function mostrarHabitaciones(campo, orden) {
             return resultado;
         });
 
+    //ordenar los datos de forma descendente
     } else {
         datos.sort((a, b) => {
             let resultado;
@@ -37,7 +39,7 @@ function mostrarHabitaciones(campo, orden) {
             } else {
                 resultado = b[campo] - a[campo];
             }
-
+            //ordena tambien por numero de habitacion
             if (resultado === 0) {
                 resultado = a["numero_habitacion"] - b["numero_habitacion"];
             }

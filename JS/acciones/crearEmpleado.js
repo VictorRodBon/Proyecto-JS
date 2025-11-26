@@ -17,7 +17,7 @@ function crearEmpleado(){
     let edad = document.getElementById("edad").value.trim();
     let salario = document.getElementById("salario").value.trim();
     
-    
+    // Validamos los campos del formulario
     if (!nombre.match(/^[A-Z][a-z]+$/)){
         contador ++;
     }
@@ -38,7 +38,7 @@ function crearEmpleado(){
     }
 
     
-    
+    //si no tiene errores crea el usuario
     if(contador==0){
         let empleado=new Empleados(id,nombre,puesto,usuario,contrasena,edad,salario);
         lista.push(empleado);
@@ -49,7 +49,7 @@ function crearEmpleado(){
         document.getElementById("error").classList.add("error", "visible");
     }
 }
-
+// comprueba si el salario cumple 3 validaciones 
 function validarSalario(salarioTexto) {
   const salario = parseFloat(salarioTexto);
   if (isNaN(salario)) return "El salario no es un número válido";

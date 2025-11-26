@@ -3,27 +3,27 @@ import { getCookie } from "../cookies/cookies.js";
 
 
 let datos = [...obtenerLista("listaHabitaciones")];
+//se obtiene el numero de habitacion desde la query string de la URL
 const numHabitacion = location.search.split("?")[1].split("=")[1];
 let contenido = "";
 let imagen = "";
 let habitacion = datos.find(i => i.numero_habitacion == numHabitacion);
 
-
-
 window.onload = ()=> {
     pintarHabitacion();
     document.getElementById("botonEstado").addEventListener("click",cambiarEstado);
-
+    //se comprueba si existe cargo y se configura el menu
     let login=getCookie('cargo');
     if (login != null) {
         login = "logout";
     } else {
         login = "login";
     }
+    //se inserta el menu
     document.getElementsByTagName('header')[0].insertAdjacentHTML("afterbegin", "<mi-menu id='menu' login="+login+"></mi-menu>");
-
 }
 
+// crea el html con los datos de la habitacion seleccionada
 function pintarHabitacion(){
         contenido = `
                         <h1>Habitación-${habitacion.numero_habitacion}</h1>
@@ -52,7 +52,7 @@ function pintarHabitacion(){
 }
 
 
-
+// comprueba si estas logeado y cambia el estado de la habitacion
 function cambiarEstado(){
 
     let login=getCookie('cargo');
