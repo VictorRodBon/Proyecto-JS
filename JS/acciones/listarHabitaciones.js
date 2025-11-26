@@ -6,6 +6,7 @@ let habitaciones_pagina = 15;
 let campoSeleccionado = "numero_habitacion";
 let boton_ordenar = document.querySelectorAll(".boton-ordenar");
 let boton_quitar_filtro = false;
+let boton_buscar = false;
 
 
 
@@ -145,9 +146,11 @@ document.getElementById("buscar").addEventListener("click", ()=>{
 
         document.getElementById("quitar-filtro").addEventListener("click", ()=>{
             actualizarTabla(campoSeleccionado);
+            document.getElementById("paginacion").style.display = "inline-block";
         });
     }
-    
+    document.getElementById("paginacion").style.display = "none";
+ 
 })
 
 document.getElementById("siguiente").addEventListener("click", ()=>{
