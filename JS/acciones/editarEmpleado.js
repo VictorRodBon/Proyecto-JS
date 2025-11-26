@@ -17,11 +17,12 @@ function mostrarEmpleadoEditar() {
 
     const empleado = datos.find(e => e.id == idEditar);
 
+    //error por si no encuentra empleado
     if (!empleado) {
         contenedor.innerHTML = "<p>Empleado no encontrado.</p>";
         return;
     }
-
+    //se crea el formulario para editar empleados
     const contenido = `
         <p>
             <b>Nombre:</b> ${empleado.nombre}
@@ -53,7 +54,7 @@ function mostrarEmpleadoEditar() {
     contenedor.getElementsByTagName("form")[0].insertAdjacentHTML("afterbegin", contenido);
 
     
-
+    //mostrar el imput ocultado
     campos.forEach(campo => {
         document.getElementById(`checkbox${campo}`).addEventListener("change", function () {
             const input = document.getElementById(`input${campo}`);
@@ -66,7 +67,7 @@ function usuarioModificado() {
     // meter timeout (mirar si puedo meter un pizzacolores (asincrono))
     location.href = "../HTML/dashboardEmpleados.html";
 }
-
+//
 function validarValores(event) {
     event.preventDefault();
 
@@ -89,13 +90,11 @@ function validarValores(event) {
                     item[propiedad] = valor;
                 }
             }
-            
         })
         return item;
     })
     actualizarLista("listaEmpleados", datos);
     usuarioModificado();
-
 }
 
 mostrarEmpleadoEditar();

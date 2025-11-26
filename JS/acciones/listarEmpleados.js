@@ -4,16 +4,18 @@ import { getCookie } from "../cookies/cookies.js";
 let datos=[...obtenerLista("listaEmpleados")];
 
 onload=()=>{
+    //se comprueba si existe cargo y se configura el menu
     let login=getCookie('cargo');
     if (login != null) {
         login = "logout";
     } else {
         login = "login";
     }
+    //se inserta el menu
     document.getElementsByTagName('header')[0].insertAdjacentHTML("afterbegin", "<mi-menu id='menu' login="+login+"></mi-menu>");
 }
 
-
+//se crea el html para mostrar los empleados
 function mostrarEmpleados() {
     let contenido = "";
     let cargo = getCookie('cargo');
@@ -41,6 +43,7 @@ function mostrarEmpleados() {
         `;
     })
     document.getElementById("lista-empleados").insertAdjacentHTML("beforeend",contenido);
+    //si el cargo es director apareceran los botones
     if (cargo.toLowerCase() === 'director'){
         if (!document.querySelector(".boton-anadir")) {
             let anadir = document.createElement("button");

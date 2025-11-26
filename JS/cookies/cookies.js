@@ -1,3 +1,4 @@
+//se crea un metodo para crear una cookie
 function generarCookie(valor) {
     const fecha = new Date();
     fecha.setTime(fecha.getTime() + (10 * 60 * 1000)); // 10 minutos en milisegundos
@@ -5,6 +6,7 @@ function generarCookie(valor) {
     document.cookie = `cargo=${valor}; ${expiracion}; path=/`;
 }
 
+//busca una cookie por su nombre 
 function getCookie(nombre) {
     const valor = `; ${document.cookie}`;
     
