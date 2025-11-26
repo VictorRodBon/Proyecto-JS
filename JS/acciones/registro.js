@@ -9,13 +9,14 @@ document.querySelector("button[type='button']").addEventListener("click", regist
 
 
 function registro(){
+    //declaramos la variables
     let contador=0;
     let nombre = document.getElementById("nombre").value.trim();
     let contrasena = document.getElementById("password").value.trim();
     let correo = document.getElementById("correo").value.trim();
     let ciudad = document.getElementById("ciudad").value.trim();
 
-
+    //validamos los campos del formulario
     if (!nombre.match(/^[A-Z][a-z]+$/)){
         contador++;
     }
@@ -29,9 +30,8 @@ function registro(){
         contador++;
     }
     
-
+    // si no tiene errores se crea un nuevo usuario
     if(contador==0){
-
         let id=obtenerMaximo(listaClientes, "id")+1;
         let nuevoCliente = new Clientes(id, nombre, ciudad, correo, contrasena);
         listaClientes.push(nuevoCliente);

@@ -48,13 +48,14 @@ function mostrarHabitaciones(campo, orden) {
         });
     }
 
-    // Calcular rango de habitaciones a mostrar
+    // calcular rango de habitaciones a mostrar
     const inicio = (pagina_actual - 1) * habitaciones_pagina;
     const fin = inicio + habitaciones_pagina;
     const paginaDatos = datos.slice(inicio, fin);
 
     let contenido = "";
 
+    // crea la tabla con las habitaciones
     paginaDatos.forEach(habitacion => {
         contenido += `
             <tr>
@@ -72,6 +73,7 @@ function mostrarHabitaciones(campo, orden) {
     document.getElementById("lista-habitaciones").insertAdjacentHTML("beforeend", contenido);
 }
 
+//indica en que orden vas a ordenar la tabla
 function orden() {
     if (document.getElementById("asc").checked) {
         return "asc"
@@ -80,6 +82,7 @@ function orden() {
     }
 }
 
+// actualiza la tabla con las habitaciones que correspondan
 function actualizarTabla(campo) {
     if (boton_quitar_filtro == true){
         document.getElementById("quitar-filtro").remove();
@@ -92,17 +95,20 @@ function actualizarTabla(campo) {
     document.getElementById("pagina-indicador").textContent = `Página ${pagina_actual}`;
 }
 
+//
 window.onload = () => {
+    //marca por defecto orden ascendente
     document.getElementById("asc").checked=true;
     actualizarTabla(campoSeleccionado);
 
-
+     //se comprueba si existe cargo y se configura el menu
     let login=getCookie('cargo');
     if (login != null) {
         login = "logout";
     } else {
         login = "login";
     }
+    //se inserta el menu
     document.getElementsByTagName('header')[0].insertAdjacentHTML("afterbegin", "<mi-menu id='menu' login="+login+"></mi-menu>");
 };
 
@@ -115,7 +121,7 @@ boton_ordenar.forEach((boton)=>{
         actualizarTabla(campoSeleccionado);
     })
 })
-
+//pulsando en el boton de buscar crea la tabla con los datos que ha encontrado
 document.getElementById("buscar").addEventListener("click", ()=>{
     let ordena_por = document.getElementById("habitacion").value;
     let valor = document.getElementById("valor").value;
@@ -148,13 +154,16 @@ document.getElementById("buscar").addEventListener("click", ()=>{
 
         document.getElementById("quitar-filtro").addEventListener("click", ()=>{
             actualizarTabla(campoSeleccionado);
+            //se vuelve a mostrar los elementos de paginacion
             document.getElementById("paginacion").style.display = "inline-block";
         });
     }
+    //se quita los elementos de paginacion cuando se buscar
     document.getElementById("paginacion").style.display = "none";
  
 })
 
+//al pulsar en el boton de siguiente te muestra la pagina siguiente con las habitaciones
 document.getElementById("siguiente").addEventListener("click", ()=>{
     let total_habitaciones = obtenerLista("listaHabitaciones").length;
     let max_paginas = Math.ceil(total_habitaciones / habitaciones_pagina);
@@ -164,6 +173,7 @@ document.getElementById("siguiente").addEventListener("click", ()=>{
     }
 });
 
+// al pulsar el boton de anterior te muestra la la pagina anterior con las habitaciones
 document.getElementById("anterior").addEventListener("click", ()=>{
     if (pagina_actual>1){
         pagina_actual--;
@@ -172,4 +182,4 @@ document.getElementById("anterior").addEventListener("click", ()=>{
 });
 
 
-export { mostrarHabitaciones };
+//export { mostrarHabitaciones };
