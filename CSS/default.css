@@ -103,3 +103,26 @@ h1{
 .visible {
     display: block;
 }
+
+#spiner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;              /* ocupa toda la ventana */
+    display: flex;
+    justify-content: center;    /* centra horizontal */
+    align-items: center;        /* centra vertical */
+    background-color: rgba(245,245,245,0.7); /* opcional: fondo semitransparente */
+    z-index: 9999;              /* asegura que esté por encima */
+}
+
+#spiner p {
+    margin-top: 45vh;
+    text-align: center;
+}
+
+#spiner img {
+    width: 100px;               /* tamaño reducido */
+    height: auto;
+}
