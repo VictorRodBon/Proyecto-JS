@@ -6,6 +6,5 @@ onload = () => {
     } else {
         login = "login";
     }
-
     document.getElementsByTagName('header')[0].insertAdjacentHTML("afterbegin", "<mi-menu id='menu' login="+login+"></mi-menu>");
 };
